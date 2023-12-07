@@ -14,5 +14,6 @@ namespace Unieja.Api.Models
         public string? Estado { get; set; }
         public string? Assunto { get; set; }
         public string? Mensagem { get; set; }
+        public DateTime? Datacadastro { get; set; }
     }
 }

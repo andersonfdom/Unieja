@@ -23,9 +23,10 @@ namespace Unieja.Api.Models
         public string? Estado { get; set; }
         public string? Email { get; set; }
         public string? Nomeresponsavel { get; set; }
-        public string? Emailresponsavel { get; set; }
-        public string? Telefoneresponsavel { get; set; }
         public string? Cpfresponsavel { get; set; }
         public string? Nomemae { get; set; }
+        public DateTime? Datacadastro { get; set; }
+        public string? Emailresponsavel { get; set; }
+        public string? Telefoneresponsavel { get; set; }
     }
 }

@@ -67,3 +67,4 @@ D:\Projetos\Unieja\Unieja.Api\obj\Release\net6.0\refint\Unieja.Api.dll
 D:\Projetos\Unieja\Unieja.Api\obj\Release\net6.0\Unieja.Api.pdb
 D:\Projetos\Unieja\Unieja.Api\obj\Release\net6.0\Unieja.Api.genruntimeconfig.cache
 D:\Projetos\Unieja\Unieja.Api\obj\Release\net6.0\ref\Unieja.Api.dll
+D:\Projetos\Unieja\Unieja.Api\obj\Release\net6.0\Unieja.Api.sourcelink.json

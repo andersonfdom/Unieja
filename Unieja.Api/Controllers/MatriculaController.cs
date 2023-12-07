@@ -43,7 +43,7 @@ namespace Unieja.Api.Controllers
                         Cidade = model.Cidade,
                         Estado = model.Estado,
                         Email = model.Email,
-                        Nomeresponsavel = model.NomeResponsavel,
+                        Nomeresponsavel = model.NomeResponsavel,                        
                         Emailresponsavel = model.EmailResponsavel,
                         Telefoneresponsavel = model.TelefoneResponsavel,
                         Cpfresponsavel = model.CpfResponsavel,
@@ -53,15 +53,7 @@ namespace Unieja.Api.Controllers
                     ctx.Matriculas.Add(m);
                     ctx.SaveChanges();
 
-                    if (emailEnviado == true)
-                    {
-                        retorno = "E-mail enviado com sucesso!";
-                    }
-                    else
-                    {
-                        retorno = "Falha ao enviar e-mail!";
-                    }
-
+                    retorno = "E-mail enviado com sucesso!";
                 }
             }
             catch (Exception)

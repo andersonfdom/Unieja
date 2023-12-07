@@ -24,21 +24,18 @@ namespace Unieja.Api.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;database=unieja;uid=unieja;pwd=kE@laqJLl#1DM", Microsoft.EntityFrameworkCore.ServerVersion.Parse("11.2.2-mariadb"));
+                optionsBuilder.UseMySql("server=177.11.50.178;database=unieja_api;uid=unieja_api;pwd=kE@laqJLl#1DM", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.5.20-mariadb"));
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.UseCollation("utf8mb4_general_ci")
-                .HasCharSet("utf8mb4");
+            modelBuilder.UseCollation("utf8_general_ci")
+                .HasCharSet("utf8");
 
             modelBuilder.Entity<Faleconosco>(entity =>
             {
                 entity.ToTable("faleconosco");
-
-                entity.HasCharSet("utf8mb3")
-                    .UseCollation("utf8mb3_general_ci");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -55,6 +52,11 @@ namespace Unieja.Api.Models
                 entity.Property(e => e.Cidade)
                     .HasMaxLength(200)
                     .HasColumnName("cidade");
+
+                entity.Property(e => e.Datacadastro)
+                    .HasColumnType("timestamp")
+                    .HasColumnName("datacadastro")
+                    .HasDefaultValueSql("current_timestamp()");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(200)
@@ -78,9 +80,6 @@ namespace Unieja.Api.Models
             modelBuilder.Entity<Matricula>(entity =>
             {
                 entity.ToTable("matriculas");
-
-                entity.HasCharSet("utf8mb3")
-                    .UseCollation("utf8mb3_general_ci");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -117,6 +116,11 @@ namespace Unieja.Api.Models
                 entity.Property(e => e.Curso)
                     .HasMaxLength(200)
                     .HasColumnName("curso");
+
+                entity.Property(e => e.Datacadastro)
+                    .HasColumnType("timestamp")
+                    .HasColumnName("datacadastro")
+                    .HasDefaultValueSql("current_timestamp()");
 
                 entity.Property(e => e.Datanascimento)
                     .HasMaxLength(30)

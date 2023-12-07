@@ -39,6 +39,8 @@ namespace Unieja.Api.Controllers
 
                     ctx.Faleconoscos.Add(f);
                     ctx.SaveChanges();
+
+                    retorno = "E-mail enviado com sucesso!";
                 }
             }
             catch (Exception)
@@ -47,14 +49,6 @@ namespace Unieja.Api.Controllers
                 return retorno;
             }
 
-            if (emailEnviado == true)
-            {
-                retorno = "E-mail enviado com sucesso!";
-            }
-            else
-            {
-                retorno = "Falha ao enviar e-mail!";
-            }
             return retorno;
         }
 
