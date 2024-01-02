@@ -15,5 +15,7 @@ namespace Unieja.Api.Models
         public string? Assunto { get; set; }
         public string? Mensagem { get; set; }
         public DateTime? Datacadastro { get; set; }
+        public sbyte? Emailenviado { get; set; }
+        public string? Retornomsgemail { get; set; }
     }
 }

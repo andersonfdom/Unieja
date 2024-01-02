@@ -19,8 +19,10 @@ namespace Unieja.Api
                       $"<div style='text-align:left;word-wrap: break-word'>{ItensBody}</div><br /></div>";
         }
 
-        public bool EmailEnviado(string emailDestino, string subject, string body, string tituloErro)
+        public RetornoEmail EmailEnviado(string emailDestino, string subject, string body, string tituloErro)
         {
+            RetornoEmail retorno = new RetornoEmail();
+
             try
             {
                 MailMessage mail = new MailMessage();
@@ -42,12 +44,25 @@ namespace Unieja.Api
 
                 SmtpServer.Send(mail);
 
-                return true;
+                retorno.EmailEnviado = 1;
+                retorno.RetornoMsgEmail = "E-mail enviado com sucesso!";
+                
+                return retorno;
             }
             catch (Exception ex)
             {
-                return false;
+                retorno.EmailEnviado = 0;
+                retorno.RetornoMsgEmail = "Falha" + tituloErro + " : " + ex.Message.ToString();
+
+                return retorno;
             }
         }
+    }
+
+    public class RetornoEmail
+    {
+        public sbyte EmailEnviado { get; set; }
+
+        public string RetornoMsgEmail { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace Unieja.Api.Controllers
         {
             string retorno = string.Empty;
 
-            bool emailEnviado = mailUtils.EmailEnviado(model.Email, "Matrícula site unieja.com.br Aluno: " +
+            var emailEnviado = mailUtils.EmailEnviado(model.Email, "Matrícula site unieja.com.br Aluno: " +
             model.Nome + " Unidade: " + model.AgenciadorPolo +
             " Curso: " + model.Curso, MontarCorpoEmail(model),
             " envio e-mail menu Matricule-se");
@@ -47,19 +47,22 @@ namespace Unieja.Api.Controllers
                         Emailresponsavel = model.EmailResponsavel,
                         Telefoneresponsavel = model.TelefoneResponsavel,
                         Cpfresponsavel = model.CpfResponsavel,
-                        Nomemae = model.NomeMae
+                        Nomemae = model.NomeMae,
+                        Emailenviado = emailEnviado.EmailEnviado,
+                        Retornomsgemail = emailEnviado.RetornoMsgEmail
                     };
 
                     ctx.Matriculas.Add(m);
                     ctx.SaveChanges();
 
-                    retorno = "E-mail enviado com sucesso!";
+                    retorno = m.Retornomsgemail;
                 }
             }
             catch (Exception)
             {
-                retorno = "Falha ao enviar e-mail!";
+                retorno = emailEnviado.RetornoMsgEmail;
                 return retorno;
+
             }
 
             return retorno;

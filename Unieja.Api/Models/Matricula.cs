@@ -28,5 +28,7 @@ namespace Unieja.Api.Models
         public DateTime? Datacadastro { get; set; }
         public string? Emailresponsavel { get; set; }
         public string? Telefoneresponsavel { get; set; }
+        public string? Retornomsgemail { get; set; }
+        public sbyte? Emailenviado { get; set; }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Unieja.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81aa82484ad07eed379a5a3301b5b22feb093eb7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2caabdcdbf064a6fb3e294e0ba066cfa41d6f1ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Unieja.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Unieja.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

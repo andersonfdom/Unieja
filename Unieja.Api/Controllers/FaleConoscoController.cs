@@ -16,7 +16,7 @@ namespace Unieja.Api.Controllers
         {
             string retorno = string.Empty;
 
-            bool emailEnviado = mailUtils.EmailEnviado(model.Email, "Cadastro Fale Conosco site unieja.com.br Nome: " +
+            var emailEnviado = mailUtils.EmailEnviado(model.Email, "Cadastro Fale Conosco site unieja.com.br Nome: " +
                              model.Nome + " Cidade: " + model.Cidade +
                              " Estado: " + model.Estado +
                              " Assunto: " + model.Assunto, MontarCorpoEmail(model), " envio e-mail menu Fale Conosco");
@@ -35,17 +35,19 @@ namespace Unieja.Api.Controllers
                         Estado = model.Estado,
                         Assunto = model.Assunto,
                         Mensagem = model.Mensagem,
+                        Retornomsgemail = emailEnviado.RetornoMsgEmail,
+                        Emailenviado = emailEnviado.EmailEnviado
                     };
 
                     ctx.Faleconoscos.Add(f);
                     ctx.SaveChanges();
 
-                    retorno = "E-mail enviado com sucesso!";
+                    retorno = f.Retornomsgemail;
                 }
             }
             catch (Exception)
             {
-                retorno = "Falha ao enviar e-mail!";
+                retorno = emailEnviado.RetornoMsgEmail;
                 return retorno;
             }
 

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Projetos\Unieja\Unieja.Api\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2023-12-07T01:45:05.7370946Z;True|2023-11-23T13:41:30.1316023-03:00;</History>
+    <History>True|2024-01-02T23:25:08.8543163Z;True|2023-12-30T15:59:25.5846399-03:00;True|2023-12-06T22:45:05.7370946-03:00;True|2023-11-23T13:41:30.1316023-03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

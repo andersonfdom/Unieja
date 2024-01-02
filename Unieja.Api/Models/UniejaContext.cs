@@ -24,7 +24,7 @@ namespace Unieja.Api.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=177.11.50.178;database=unieja_api;uid=unieja_api;pwd=kE@laqJLl#1DM", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.5.20-mariadb"));
+                optionsBuilder.UseMySql("server=177.11.50.178;database=api_unieja;uid=api_unieja;pwd=kE@laqJLl#1DM", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.5.20-mariadb"));
             }
         }
 
@@ -62,6 +62,10 @@ namespace Unieja.Api.Models
                     .HasMaxLength(200)
                     .HasColumnName("email");
 
+                entity.Property(e => e.Emailenviado)
+                    .HasColumnType("tinyint(4)")
+                    .HasColumnName("emailenviado");
+
                 entity.Property(e => e.Estado)
                     .HasMaxLength(200)
                     .HasColumnName("estado");
@@ -71,6 +75,8 @@ namespace Unieja.Api.Models
                 entity.Property(e => e.Nome)
                     .HasMaxLength(200)
                     .HasColumnName("nome");
+
+                entity.Property(e => e.Retornomsgemail).HasColumnName("retornomsgemail");
 
                 entity.Property(e => e.Telefone)
                     .HasMaxLength(30)
@@ -134,6 +140,10 @@ namespace Unieja.Api.Models
                     .HasMaxLength(200)
                     .HasColumnName("email");
 
+                entity.Property(e => e.Emailenviado)
+                    .HasColumnType("tinyint(4)")
+                    .HasColumnName("emailenviado");
+
                 entity.Property(e => e.Emailresponsavel)
                     .HasMaxLength(200)
                     .HasColumnName("emailresponsavel");
@@ -161,6 +171,8 @@ namespace Unieja.Api.Models
                 entity.Property(e => e.Nomeresponsavel)
                     .HasMaxLength(200)
                     .HasColumnName("nomeresponsavel");
+
+                entity.Property(e => e.Retornomsgemail).HasColumnName("retornomsgemail");
 
                 entity.Property(e => e.Rg)
                     .HasMaxLength(30)
